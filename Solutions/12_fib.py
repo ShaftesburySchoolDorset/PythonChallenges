@@ -17,32 +17,36 @@ F0 = 1, and F1 = 1. Therefore, F2 = 2
 def f(n):
     a, b = 0, 1
     for i in range(0, n):
-        ?
-    return ?
+        a, b = b, a + b
+    return a
 
 # Part 2 - Recursive Solution
 
 def F(n):
-    if ?:
+    if n == 0:
         return 0
-    elseif n <>1:
-        print 12
+    elif n == 1:
+        return 1
+    else:
+        return F(n-1)+F(n-2)
 
 # Part 3 - Mathmatical Solution
 
 from math import sqrt
 
 def mf(n):
-    return round(?)
+    return round(((1+sqrt(5))**n-(1-sqrt(5))**n)/(2**n*sqrt(5)))
 
 # Part 4 - Range
 
 def SubFib(startNumber, endNumber):
-    for cur in ?:
-        if ? ? endNumber:
+    for cur in F():
+        if cur > endNumber:
             return
-        if ? ? startNumber:
-            return ?
+        if cur >= startNumber:
+            return cur
 
-for i in SubFib(0, 10):
-    print i
+#for i in SubFib(0, 10):
+#    print i
+
+print(mf(9))
