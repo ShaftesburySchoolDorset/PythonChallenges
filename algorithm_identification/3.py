@@ -7,8 +7,8 @@ def three(alist):
         lefthalf = alist[:mid]
         righthalf = alist[mid:]
 
-        mergeSort(lefthalf)
-        mergeSort(righthalf)
+        three(lefthalf)
+        three(righthalf)
 
         i=0
         j=0
