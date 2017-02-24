@@ -11,11 +11,17 @@ def decodeMorse(morseCode):
     # ToDo: Accept dots, dashes and spaces, return human-readable message
     output = ""
     
-    char = '...'
-    h_char = MORSE_CODE[char]
+    words = morseCode.split('   ')
+    for word in words:
+        letters = word.split(' ')
+        #TODO
     
-    return h_char
+    return output
 
 result = decodeMorse('.... . -.--   .--- ..- -.. .')
 
 print(result)
+
+
+
+
